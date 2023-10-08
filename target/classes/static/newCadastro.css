@@ -1,0 +1,95 @@
+body {
+    background-size: 100%;
+    background-image: linear-gradient(to right,#28033e, #000  ,  #28033e );
+    color: #fff;
+    font-family: "Ubuntu", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#estruturaCadastro{
+    margin-top: 5%;
+    width: 35%;
+
+    min-width: 300px;
+}
+ 
+hr{
+    width: 100%;
+}
+
+#title{
+    margin:auto;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+#DadosCadastro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid;
+    border-color: #560186;
+    border-radius: 2rem;
+    align-items: flex-start;
+    min-width: 200px;
+}
+
+#FormCadastro{
+    width: 70%;
+    margin: auto;
+    
+    margin-bottom: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#EstruturaForm{
+    margin-bottom: 5%;
+    
+    width: 100%;
+}
+
+input{
+    width: 90%;
+    height: 20px;
+}
+
+
+
+#BTSalvar{
+    margin: auto;
+    width: 50%;
+    height: 2.5em;
+    border: 3px solid;
+    border-color: #560186;
+    background-color: transparent;
+    color: #fff;
+    transition: 0.5s;
+    
+}
+#BTSalvar:hover{
+    margin: auto;
+    transition: 0.5s;
+    width: 60%;
+    height: 2.8em;
+    border-color: #e48cc9;
+    color: #e48cc9;
+    background-color: #560186;
+    cursor: pointer;
+    
+    
+}
+#Voltar{
+    margin: auto;
+    color: #e48cc9;
+}
+
+#Voltar:hover{
+    color: #fff;
+    transition: 0.5s;
+}
+
+

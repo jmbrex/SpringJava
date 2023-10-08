@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="newLogin.css" type="text/css">
+
+    <title>Login Page</title>
+</head>
+<body>
+    <header id="header">
+    </header>
+    <section id="estrutura">
+        <div id="Login">
+            <form action="formLogin" id="formLogin" method="post">
+                <h1 id="wellcome">Well Come.</h1>
+            <br><br>
+            <input type="text" placeholder="User" class="credenciais" id="InputUser" name="InputUser" required>
+            <br><br>
+            <input type="password" placeholder="PassWord" class="credenciais" id="InputSenha" name ="InputSenha" required>
+            <br>
+            <P>First access: <a id="linkCad" href="Cadastro">Click Here</a></P>
+            <br>
+            <Button id="BTlogin" type="submit">Login</Button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

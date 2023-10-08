@@ -1,0 +1,86 @@
+body {
+    width: auto;
+    height: auto;
+    background: linear-gradient(to right,#28033e, #000000 , #28033e);
+    background-size: 600% 600%;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -webkit-animation: AnimationName 20s ease infinite;
+    -moz-animation: AnimationName 20s ease infinite;
+    animation: AnimationName 20s ease infinite;
+    font-family: "Ubuntu", sans-serif;
+}
+#wellcome {
+    font-family: "Ubuntu", sans-serif;
+    padding-left: 25px;
+    margin: 0px;
+}
+
+#estrutura{
+    margin-top: 10%;
+    vertical-align: baseline;
+    border: 5px solid;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 30%;
+    height: 300px;
+    min-height: 300px;
+    min-width: 300px;
+    
+    border-radius: 1.5rem;
+    border-color: #4f1372;
+    background-color: #000000;
+}
+
+#Login{
+    margin-left: 30px;
+}
+
+#BTlogin{
+    
+    height: 30px;
+    width: 90%;
+    border: 3px solid;
+    border-color: #560186;
+    background-color: transparent;
+    color: #fff;
+    transition: 0.5s;
+}
+
+#BTlogin:hover{
+    cursor: pointer;
+    border-color: #e48cc9;
+    color: #e48cc9;
+    background-color: #560186;
+    transition: 0.5s;
+    width: 100%;
+}
+
+#linkCad{
+    color: #e48cc9;
+}
+
+#linkCad:hover{
+    color: #fff;
+    transition: 0.5s;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}

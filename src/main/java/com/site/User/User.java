@@ -2,10 +2,11 @@
 package com.site.User;
 
 public class User {
-    private String Nome, Email, Senha;
-
+    private String Nome, Email, Senha, NickName;
+    private int ID;
     public User(){}
-    public User(String Nome, String Email, String Senha) {
+    public User(int ID, String Nome,String NickName, String Email, String Senha) {
+        this.NickName = NickName;
         this.Nome = Nome;
         this.Email = Email;
         this.Senha = Senha;
@@ -33,6 +34,22 @@ public class User {
 
     public void setSenha(String Senha) {
         this.Senha = Senha;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public String getNickName() {
+        return NickName;
+    }
+
+    public void setNickName(String NickName) {
+        this.NickName = NickName;
     }
     
     

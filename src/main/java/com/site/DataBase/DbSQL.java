@@ -37,13 +37,14 @@ public class DbSQL {
     public void sqlDbUserInsert(User user){
         Connection connection = connectionMySql();
         
-        String StringSQL = "insert into usuario(ID,Nome,email, Senha)values(null,?,?,? )";
+        String StringSQL = "insert into usuario(ID,Nome,NickName,email, Senha)values(null,?,?,?,? )";
         PreparedStatement preparedStmt;
         try{
             preparedStmt = connection.prepareStatement(StringSQL);
             preparedStmt.setString(1, user.getNome());
-            preparedStmt.setString(2, user.getEmail());
-            preparedStmt.setString(3, user.getSenha());
+            preparedStmt.setString(2, user.getNickName());
+            preparedStmt.setString(3, user.getEmail());
+            preparedStmt.setString(4, user.getSenha());
             preparedStmt.executeUpdate();
         }catch(SQLException e){
             e.printStackTrace();}
@@ -62,12 +63,11 @@ public class DbSQL {
             preparedStmt.setString(1,Nome);
             ResultSet result = preparedStmt.executeQuery();
             while(result.next()){
-                //p1.setID(result.getInt("ID"));
-                //p1.setNickName(result.getString("NickName"));
-                //p1.setEmail(result.getString("email"));
-                //p1.setUserName(result.getString("UserName"));
-               // p1.setSex(result.getString("Sex"));
-               // p1.setPassWord(result.getString("Senha"));
+                p1.setID(result.getInt("ID"));
+                p1.setNome(result.getString("Nome"));
+                p1.setNickName(result.getString("NickName"));
+                p1.setEmail(result.getString("email"));
+               p1.setSenha(result.getString("Senha"));
             }
         }catch  (SQLException e){
             e.printStackTrace();

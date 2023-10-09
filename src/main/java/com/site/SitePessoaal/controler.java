@@ -22,17 +22,30 @@ public class controler {
     }
     
     @RequestMapping(value = "teste", method = RequestMethod.POST)
-    public String bd(Model modelo, String InputName, String InputEmail, String InputSenha, String InputSenhaConfirm){
+    public String Cadastro(Model modelo, String InputName,String InputNick, String InputEmail, String InputSenha, String InputSenhaConfirm){
     
         System.out.println(InputEmail);
-        User u1 = new User(InputName, InputEmail, InputSenha);
+        User u1 = new User(0,InputName,InputNick, InputEmail, InputSenha);
+        System.out.println(u1.getNickName());
         DbSQL SQL = new DbSQL();
         SQL.sqlDbUserInsert(u1);
         return "Cadastro";
         
     }
     
-    
+    @RequestMapping(value = "formLogin", method = RequestMethod.POST)
+    public String Login(Model modelo, String InputUser,String InputNick, String InputSenha){
+        DbSQL SQL = new DbSQL();
+        User p1 = SQL.sqlUserSelectNickName(InputNick);
+        System.out.println(p1.getSenha());
+        if (p1.getSenha().equals(InputSenha)){
+            System.out.println("Login OK");
+            return "Menu";
+        }else{
+            return "Cadastro";
+        }
+       
+   }
     
     
     

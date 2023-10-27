@@ -50,12 +50,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
-        <dependency>
+        <dependency>         
             <groupId>org.mongodb</groupId>
             <artifactId>mongodb-driver</artifactId>
             <version>3.12.11</version>
             <type>jar</type>
-        </dependency>
+        </dependency>       
     </dependencies>
     <build>
         <plugins>

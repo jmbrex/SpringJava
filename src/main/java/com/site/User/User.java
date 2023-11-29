@@ -2,38 +2,48 @@
 package com.site.User;
 
 public class User {
-    private String Nome, Email, Senha, NickName;
+    private String name, email, senha, nick;
     private int ID;
     public User(){}
-    public User(int ID, String Nome,String NickName, String Email, String Senha) {
-        this.NickName = NickName;
-        this.Nome = Nome;
-        this.Email = Email;
-        this.Senha = Senha;
+
+    public User(String name, String email, String senha, String nick, int ID) {
+        this.name = name;
+        this.email = email;
+        this.senha = senha;
+        this.nick = nick;
+        this.ID = ID;
     }
 
-    public String getNome() {
-        return Nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String Nome) {
-        this.Nome = Nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
-    public void setEmail(String Email) {
-        this.Email = Email;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getSenha() {
-        return Senha;
+        return senha;
     }
 
-    public void setSenha(String Senha) {
-        this.Senha = Senha;
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public String getNick() {
+        return nick;
+    }
+
+    public void setNick(String nick) {
+        this.nick = nick;
     }
 
     public int getID() {
@@ -43,14 +53,9 @@ public class User {
     public void setID(int ID) {
         this.ID = ID;
     }
-
-    public String getNickName() {
-        return NickName;
-    }
-
-    public void setNickName(String NickName) {
-        this.NickName = NickName;
-    }
+    
+    
+    
     
     
     

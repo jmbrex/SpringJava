@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../newCadastro.css"/>
+    <link rel="stylesheet" href="css/newCadastro.css"/>
+    <script src="Script/ScriptCadastro.js" defer></script>
     <title>Register Page</title>
    
 </head>
@@ -13,7 +14,7 @@
             <h2 id="title">Register</h2>
              
             <hr>
-            <form action="teste" id="FormCadastro" method="post" >
+            <form id="FormCadastro" >
                 <div id="EstruturaForm">  
                     <h1 th:text="${mensagem}"></h1>
                     <label for="InputName" class="label">Name:</label>

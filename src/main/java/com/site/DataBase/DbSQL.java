@@ -41,8 +41,8 @@ public class DbSQL {
         PreparedStatement preparedStmt;
         try{
             preparedStmt = connection.prepareStatement(StringSQL);
-            preparedStmt.setString(1, user.getNome());
-            preparedStmt.setString(2, user.getNickName());
+            preparedStmt.setString(1, user.getName());
+            preparedStmt.setString(2, user.getNick());
             preparedStmt.setString(3, user.getEmail());
             preparedStmt.setString(4, user.getSenha());
             preparedStmt.executeUpdate();
@@ -64,8 +64,8 @@ public class DbSQL {
             ResultSet result = preparedStmt.executeQuery();
             while(result.next()){
                 p1.setID(result.getInt("ID"));
-                p1.setNome(result.getString("Nome"));
-                p1.setNickName(result.getString("NickName"));
+                p1.setName(result.getString("Nome"));
+                p1.setNick(result.getString("NickName"));
                 p1.setEmail(result.getString("email"));
                p1.setSenha(result.getString("Senha"));
             }

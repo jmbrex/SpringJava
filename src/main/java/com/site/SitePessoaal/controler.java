@@ -23,38 +23,23 @@ public class controler {
     }
     
     @PostMapping("/Cadastro")
-    public  ResponseEntity<User> create (@RequestBody User User){
+    public  ResponseEntity create (@RequestBody User User){
         System.out.println("chegou");
         System.out.println(User.getName());
-        return ResponseEntity.status(HttpStatus.CREATED).body(User);
-    }
-    
-    /*
-    @RequestMapping(value = "teste", method = RequestMethod.POST)
-    public String Cadastro(Model modelo, String InputName,String InputNick, String InputEmail, String InputSenha, String InputSenhaConfirm){
-    
-        System.out.println(InputEmail);
-        User u1 = new User(0,InputName,InputNick, InputEmail, InputSenha);
-        System.out.println(u1.getNickName());
+        
         DbSQL SQL = new DbSQL();
-        SQL.sqlDbUserInsert(u1);
-        return "Cadastro";
+        User U2 =  SQL.sqlUserSelectNickName(User.getNick());
+        
+        if(User.getNick().equals(U2.getNick())){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(U2);
+        }else{
+            return ResponseEntity.status(HttpStatus.CREATED).body(User);
+        }
+        
+        
         
     }
     
-    @RequestMapping(value = "formLogin", method = RequestMethod.POST)
-    public String Login(Model modelo, String InputUser,String InputNick, String InputSenha){
-        DbSQL SQL = new DbSQL();
-        User p1 = SQL.sqlUserSelectNickName(InputNick);
-        System.out.println(p1.getSenha());
-        if (p1.getSenha().equals(InputSenha)){
-            System.out.println("Login OK");
-            return "Menu";
-        }else{
-            return "Cadastro";
-        }
-       
-   }*/
     
     
     

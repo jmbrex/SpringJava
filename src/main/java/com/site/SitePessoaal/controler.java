@@ -21,6 +21,10 @@ public class controler {
     public String Cadastro(Model modelo){
         return "Cadastro";
     }
+    @RequestMapping("/Menu")
+    public String Menu(Model modelo){
+        return "Menu";
+    }
     
     @PostMapping("/Cadastro")
     public  ResponseEntity create (@RequestBody User User){
@@ -36,11 +40,15 @@ public class controler {
             SQL.sqlDbUserInsert(User);
             return ResponseEntity.status(HttpStatus.CREATED).body(User);
         }
-        
-        
-        
     }
     
+    @PostMapping("/Login")
+    public  ResponseEntity login (@RequestBody User User){
+        System.out.println("chegou");
+        
+        return ResponseEntity.status(HttpStatus.CREATED).body(User);
+        
+    }
     
     
     

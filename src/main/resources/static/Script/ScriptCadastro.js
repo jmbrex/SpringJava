@@ -27,9 +27,19 @@ form.addEventListener('submit', function(event) {
             },
             body: JSON.stringify(postData),
         })
-        .then(response => response.json())
+        .then(response => {
+        if (response.ok) {
+                return response.json(); // Tenta analisar como JSON se a resposta estiver OK
+            } else {
+                return response.text(); // Se a resposta não estiver OK, pega como texto
+            }
+        })
         .then(data => {
-            console.log('POST Response:', data);
+            if(data instanceof Object){
+                window.alert("Usuario criado");
+            }else{
+                window.alert(data);
+            }
         })
         .catch(error => console.error('Error:', error));
         console.log("fez o post");

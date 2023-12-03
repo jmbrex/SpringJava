@@ -31,8 +31,9 @@ public class controler {
         User U2 =  SQL.sqlUserSelectNickName(User.getNick());
         
         if(User.getNick().equals(U2.getNick())){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(U2);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("usuario ja existe");
         }else{
+            SQL.sqlDbUserInsert(User);
             return ResponseEntity.status(HttpStatus.CREATED).body(User);
         }
         

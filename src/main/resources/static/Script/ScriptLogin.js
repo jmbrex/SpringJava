@@ -28,7 +28,6 @@ FormLogin.addEventListener('submit', function(event){
         })
         .then(data => {
             if(data instanceof Object){
-                
                 console.log(data);
                 window.location.href = 'Menu';
             }else{

@@ -28,7 +28,6 @@ public class controler {
     
     @PostMapping("/Cadastro")
     public  ResponseEntity create (@RequestBody User User){
-        System.out.println("chegou");
         System.out.println(User.getName());
         
         DbSQL SQL = new DbSQL();
@@ -44,9 +43,14 @@ public class controler {
     
     @PostMapping("/Login")
     public  ResponseEntity login (@RequestBody User User){
-        System.out.println("chegou");
+        DbSQL SQL = new DbSQL();
+        User U2 =  SQL.sqlUserSelectNickName(User.getNick());
+        if(User.getSenha().equals(U2.getSenha())){
+            return ResponseEntity.status(HttpStatus.CREATED).body(U2);
+        }else{
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("usuario ou senha incorreos");
+        }
         
-        return ResponseEntity.status(HttpStatus.CREATED).body(User);
         
     }
     

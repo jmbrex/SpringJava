@@ -17,6 +17,7 @@ form.addEventListener('submit', function(event) {
             nick: nick.value,
             email: email.value,
             senha: senha.value,
+            
         
         };
         

@@ -1,4 +1,4 @@
-console.log("Cadastro");
+const dayjs = require("dayjs");
 
 const form = document.getElementById('FormCadastro');
 const name = document.getElementById('InputName');
@@ -47,6 +47,7 @@ form.addEventListener('submit', function(event) {
     }else{
         window.alert('Senhas divergentes')
     }
+
     
 })
 

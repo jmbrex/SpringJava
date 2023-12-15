@@ -5,12 +5,8 @@ const Senha = document.getElementById('InputSenha');
 FormLogin.addEventListener('submit', function(event){
     event.preventDefault();
     let postData = {
-            
-            name: "",
             nick: Nick.value,
-            email: "",
-            senha: Senha.value,
-        
+            senha: Senha.value
         };
     fetch('/Login',{
             method: 'POST',

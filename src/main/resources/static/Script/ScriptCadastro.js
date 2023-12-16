@@ -1,5 +1,3 @@
-const dayjs = require("dayjs");
-
 const form = document.getElementById('FormCadastro');
 const name = document.getElementById('InputName');
 const nick = document.getElementById('InputNick');

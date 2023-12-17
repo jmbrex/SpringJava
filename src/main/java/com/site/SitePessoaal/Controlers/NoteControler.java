@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -20,10 +21,19 @@ public class NoteControler {
     
     @GetMapping
     public ResponseEntity GetNotes(@RequestBody User user){
+        System.out.println(user.getID());
         DbSQLNotePad sqlNote = new DbSQLNotePad();
         
         List<NotePad> NotePadList = sqlNote.sqlDbNoteSelect(user);
         
         return ResponseEntity.status(HttpStatus.OK).body(NotePadList);
+    }
+    
+    @PostMapping
+    public ResponseEntity saveNotes(@RequestBody NotePad notePad){
+        DbSQLNotePad sqlNote = new DbSQLNotePad();
+        sqlNote.sqlDbNoteInsert(notePad);
+        
+        return ResponseEntity.status(HttpStatus.CREATED).body("Anotações salvas");
     }
 }

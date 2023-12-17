@@ -3,6 +3,8 @@ package com.site.DataBase;
 import com.site.NotePad.NotePad;
 import com.site.User.User;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DbSQLNotePad {
     private static Connection conexao_MySql = null;
@@ -51,5 +53,35 @@ public class DbSQLNotePad {
         }catch(SQLException e){
             e.printStackTrace();}
         closeConnectionMySql(connection);
+    }
+    
+    public List<NotePad> sqlDbNoteSelect( User user){
+        List<NotePad> notePadList = new ArrayList<>();
+        
+        Connection connection = connectionMySql();
+        String StringSQL = "select* from NotePad where UserID = ?";
+        PreparedStatement preparedStmt;
+        
+        try{
+            preparedStmt = connection.prepareStatement(StringSQL);
+            preparedStmt.setInt(1,user.getID());
+            ResultSet result = preparedStmt.executeQuery();
+            
+            while(result.next()){
+                NotePad note = new NotePad();
+                note.setID(result.getInt("ID"));
+                note.setUserID(result.getInt("UserID"));
+                note.setName(result.getString("NoteName"));
+                note.setContent(result.getString("Content"));
+                note.setCreatedAt(result.getDate("created"));
+                notePadList.add(note);
+            }
+        }catch  (SQLException e){
+            e.printStackTrace();
+        }
+        closeConnectionMySql(connection);
+        
+        return notePadList;
+        
     }
 }

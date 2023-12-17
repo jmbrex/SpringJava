@@ -42,4 +42,17 @@ body {
     font-size: 20px;
     display: flex;
     margin: 1%;
+    margin-left: 2%
+}
+
+.NavBTN{
+    border-left: solid 3px;
+    border-right: solid 3px;
+    border-color: #4f1372;
+    width: 10%;
+    color: #ffffff;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center
 }

@@ -1,5 +1,5 @@
+com\site\NotePad\NotePad.class
 com\site\SitePessoaal\SitePessoaalApplication.class
 com\site\SitePessoaal\controler.class
 com\site\User\User.class
 com\site\DataBase\DbSQL.class
-.netbeans_automatic_build

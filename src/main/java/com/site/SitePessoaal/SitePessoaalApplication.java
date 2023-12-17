@@ -1,5 +1,7 @@
 package com.site.SitePessoaal;
 
+import com.site.DataBase.DbSQLNotePad;
+import com.site.NotePad.NotePad;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

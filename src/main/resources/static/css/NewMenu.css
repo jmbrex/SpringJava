@@ -56,3 +56,11 @@ body {
     justify-content: center;
     align-items: center
 }
+
+.NavBTN:hover{
+    cursor: pointer;
+    border-color: #e48cc9;
+    color: #e48cc9;
+    background-color: #560186;
+    transition: 0.5s;
+}

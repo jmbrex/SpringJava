@@ -21,3 +21,7 @@
     border-color: #4f1372;
     width: 100%
 }
+
+#NoteName{
+    max-width: 50%;
+}

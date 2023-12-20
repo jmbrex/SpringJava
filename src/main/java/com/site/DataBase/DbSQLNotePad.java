@@ -48,7 +48,7 @@ public class DbSQLNotePad {
             preparedStmt.setInt(1, notePad.getUserID());
             preparedStmt.setString(2, notePad.getName());
             preparedStmt.setString(3, notePad.getContent());
-            preparedStmt.setDate(4, notePad.getCreatedAt());
+            preparedStmt.setTimestamp(4, notePad.getCreatedAt());
             preparedStmt.executeUpdate();
         }catch(SQLException e){
             e.printStackTrace();}
@@ -73,7 +73,7 @@ public class DbSQLNotePad {
                 note.setUserID(result.getInt("UserID"));
                 note.setName(result.getString("NoteName"));
                 note.setContent(result.getString("Content"));
-                note.setCreatedAt(result.getDate("created"));
+                note.setCreatedAt(result.getTimestamp("created"));
                 notePadList.add(note);
             }
         }catch  (SQLException e){

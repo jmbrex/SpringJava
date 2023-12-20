@@ -6,6 +6,11 @@ package com.site.SitePessoaal.Controlers;
 
 import com.site.DataBase.DbSQLNotePad;
 import com.site.NotePad.NotePad;
+import java.sql.Date;
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -27,6 +32,10 @@ public class NoteCreateControler {
     @PostMapping("/")
     public ResponseEntity saveNotes(@RequestBody NotePad notePad){
         DbSQLNotePad sqlNote = new DbSQLNotePad();
+        LocalDateTime currentDate = LocalDateTime.now();
+        
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        notePad.setCreatedAt(Timestamp.valueOf(currentDate.format(formatter)));
         sqlNote.sqlDbNoteInsert(notePad);
         
         return ResponseEntity.status(HttpStatus.CREATED).body("Anotações salvas");

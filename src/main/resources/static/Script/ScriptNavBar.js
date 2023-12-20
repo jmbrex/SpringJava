@@ -14,6 +14,7 @@ TitleDay.innerText = toDayJs.format("DD/MM/YYYY")
 
 BTNlogout.addEventListener('click', function (event){
     event.preventDefault();
+    sessionStorage.clear();
     window.location.href = '../index.html'
 })
 

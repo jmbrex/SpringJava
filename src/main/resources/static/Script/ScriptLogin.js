@@ -25,6 +25,7 @@ FormLogin.addEventListener('submit', function(event){
         .then(data => {
             if(data instanceof Object){
                 console.log(data);
+                sessionStorage.setItem('LoggedID', data.id);
                 window.location.href = 'Menu';
             }else{
                 window.alert(data);

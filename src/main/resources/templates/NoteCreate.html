@@ -5,11 +5,33 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/NewMenu.css">
+        <link rel="stylesheet" href="css/NewCreateNote.css">
+        <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7"></script>
+        <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7"></script>
+        <script src="Script/ScriptNavBar.js" defer></script>
+        <title>Create Notes</title>
     </head>
     <body>
-        <div>TODO write content</div>
+        <main>
+            <header id="Menu">
+                <Button id="CreateNote" class="NavBTN">Create Note</Button>
+                <Button id="YourNotes" class="NavBTN">Your Notes</Button>
+                <Button id="voltar" class="NavBTN">Logout</Button>
+                <p id="Day">xx/xx/xxxx</p>
+            </header>
+
+            <section id="Estrutura">
+                <form id="NewNote">
+                    <label for="NoteName">Note Name</label><br>
+                    <input type="text" name="NoteName" id="NoteName" class="inputs"><br><br>
+                    <label for="NoteContent">Content</label><br>
+                    <textarea name="NoteContent" id="NoteContent" cols="30" rows="10"class="inputs" ></textarea><br><br>
+                    <button type="submit" id="BTCreateNote" >Save Note</button>
+                </form>
+            </section>
+        </main>
     </body>
 </html>

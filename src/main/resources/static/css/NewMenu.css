@@ -35,21 +35,26 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
     background-color: #000000;
 }
 
 #Day{
-    font-size: 20px;
+    font-size: 100%;
     display: flex;
     margin: 1%;
     margin-left: 2%
 }
 
 .NavBTN{
+    font-size: 80%;
     border-left: solid 3px;
     border-right: solid 3px;
     border-color: #4f1372;
     width: 10%;
+    height: 4em;
+    min-width: min-content;
+    min-height: min-content;
     color: #ffffff;
     background-color: #000000;
     display: flex;

@@ -1,0 +1,23 @@
+#Estrutura{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+    border: 5px solid;
+    border-color: #4f1372;
+    background-color: #000000;
+}
+
+#NewNote{
+    margin: 2%;
+    width: 50%
+}
+
+.inputs{
+    background-color: #000000;
+    color: #ffffff;
+    border: solid 1px;
+    border-color: #4f1372;
+    width: 100%
+}

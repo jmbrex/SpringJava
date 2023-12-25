@@ -1,3 +1,4 @@
+const section = document.getElementById("section");
 
 fetch(`/NoteView/${parseInt(sessionStorage.getItem('LoggedID'))}`, {
     method: 'GET',
@@ -15,8 +16,17 @@ fetch(`/NoteView/${parseInt(sessionStorage.getItem('LoggedID'))}`, {
         .then(data => {
             if (data instanceof Object) {
                 console.log(data);
+                Notes(data);
             } else {
                 window.alert(data);
             }
         })
         .catch(error => console.error('Error:', error));
+
+
+function Notes(data){
+    for (var i = 0; i < data.length ; i++) {
+        console.log(data[i]["name"]);
+        
+    }
+}

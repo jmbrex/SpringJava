@@ -19,7 +19,7 @@ public class NoteViewControler {
     @RequestMapping
     public String Note(){return"NoteView";}
     
-    @GetMapping("/view")
+    @GetMapping("/")
     public ResponseEntity GetNotes(@RequestBody User user){
         System.out.println(user.getID());
         DbSQLNotePad sqlNote = new DbSQLNotePad();

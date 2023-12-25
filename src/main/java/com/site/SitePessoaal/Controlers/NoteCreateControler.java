@@ -32,12 +32,12 @@ public class NoteCreateControler {
     @PostMapping("/")
     public ResponseEntity saveNotes(@RequestBody NotePad notePad){
         DbSQLNotePad sqlNote = new DbSQLNotePad();
-        LocalDateTime currentDate = LocalDateTime.now();
+        LocalDateTime currentDate = LocalDateTime.now(); // pegando data e hora atual
         
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        notePad.setCreatedAt(Timestamp.valueOf(currentDate.format(formatter)));
-        sqlNote.sqlDbNoteInsert(notePad);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"); // tipo de formatação
+        notePad.setCreatedAt(Timestamp.valueOf(currentDate.format(formatter))); // salvando a data e hora formatada no objeto notePad
+        sqlNote.sqlDbNoteInsert(notePad); // Inserindo no banco de dados
         
-        return ResponseEntity.status(HttpStatus.CREATED).body("Anotações salvas");
+        return ResponseEntity.status(HttpStatus.CREATED).body("Anotações salvas"); // retornando pro cliente que os dados foram salvos
     }
 }

@@ -5,9 +5,10 @@ import lombok.Data;
 
 @Data
 public class User {
-    private String name, email, senha, nick;
     private int ID;
-    public User(){}
+    private String name, email, senha, nick;
+    
+    //public User(){}
     
     /*public User(String name, String email, String senha, String nick, int ID) {
         this.ID = ID;

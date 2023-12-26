@@ -26,7 +26,15 @@ fetch(`/NoteView/${parseInt(sessionStorage.getItem('LoggedID'))}`, {
 
 function Notes(data){
     for (var i = 0; i < data.length ; i++) {
-        console.log(data[i]["name"]);
+        let div = document.createElement("div");
         
+        let NoteName = document.createElement("h3");
+        NoteName.innerHTML = data[i]["name"];
+        
+        let NoteContent = document.createElement("p");
+        NoteContent.innerHTML = data[i]["content"];
+        div.appendChild(NoteName);
+        div.appendChild(NoteContent);
+        section.appendChild(div);
     }
 }

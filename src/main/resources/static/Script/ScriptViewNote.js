@@ -27,12 +27,16 @@ fetch(`/NoteView/${parseInt(sessionStorage.getItem('LoggedID'))}`, {
 function Notes(data){
     for (var i = 0; i < data.length ; i++) {
         let div = document.createElement("div");
+        div.className = "NoteStructure";
         
-        let NoteName = document.createElement("h3");
+        let NoteName = document.createElement("h2");
         NoteName.innerHTML = data[i]["name"];
+        NoteName.className = "NoteTitle"
         
         let NoteContent = document.createElement("p");
         NoteContent.innerHTML = data[i]["content"];
+        NoteContent.className = "NoteContent"
+        
         div.appendChild(NoteName);
         div.appendChild(NoteContent);
         section.appendChild(div);

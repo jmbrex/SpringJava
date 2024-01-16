@@ -24,6 +24,7 @@ fetch(`/NoteView/${parseInt(sessionStorage.getItem('LoggedID'))}`, {
         .catch(error => console.error('Error:', error));
 
 
+//Função que recebe o parametro data que é um arquivo json e transforma o conteudo em elementos HTML ná tela usando manipulação do DOM
 function Notes(data){
     for (var i = 0; i < data.length ; i++) {
         let div = document.createElement("div");

@@ -4,16 +4,16 @@ import com.site.User.User;
 import java.sql.*;
 public class DbSQLUser {
     private static Connection conexao_MySql = null;
-    private static String localBD = "localhost";
+    private static String localBD = "localhost"; // nome do servidor com banco de dados
     private static String LINK =
-            "jdbc:mysql://" + localBD + ":3306/Site"; // MUDAR NOME DA DB SELECIONADA
-    private static final String usuario = "root";
-    private static final String senha = "";
+            "jdbc:mysql://" + localBD + ":3306/Site"; // Caminho para conectar com o banco de dados (colocar no final a porta de conexão e o nome da DB)
+    private static final String usuario = "root"; // usuario de autenticação no banco de dados
+    private static final String senha = ""; // Senha para login do user (caso não tenha senha deixar em branco)
     
     //CRIANDO CONEXÃO COM MYSQL
     public Connection connectionMySql(){
         try{
-            conexao_MySql = DriverManager.getConnection(LINK, usuario, senha);
+            conexao_MySql = DriverManager.getConnection(LINK, usuario, senha); // cria uma conexão com o banco de dados e retorna uma instancia da conexão
             System.out.println("Conexao OK!");
         }catch(SQLException e){
             throw new RuntimeException("Ocorreu um Erro");
@@ -25,7 +25,7 @@ public class DbSQLUser {
     public void closeConnectionMySql(Connection con){
         try{
             if(con != null){
-                con.close();
+                con.close(); // recebe uma instancia de conexão  e fecha ela
                 System.out.println("DB Fechado");
             }
         }catch(SQLException e){
@@ -37,7 +37,7 @@ public class DbSQLUser {
     public void sqlDbUserInsert(User user){
         Connection connection = connectionMySql();
         
-        String StringSQL = "insert into usuario(ID,Nome,NickName,email, Senha)values(null,?,?,?,? )";
+        String StringSQL = "insert into usuario(ID,Nome,NickName,email, Senha)values(null,?,?,?,? )"; 
         PreparedStatement preparedStmt;
         try{
             preparedStmt = connection.prepareStatement(StringSQL);

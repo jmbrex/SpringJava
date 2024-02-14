@@ -54,7 +54,7 @@ public class DbSQLNotePad {
             e.printStackTrace();}
         closeConnectionMySql(connection);
     }
-    
+     // RETORNA UMA LISTA DE ANOTAÇÕES DE ACORDO COM O USUARIO 
     public List<NotePad> sqlDbNoteSelect( User user){
         List<NotePad> notePadList = new ArrayList<>();
         
@@ -84,4 +84,25 @@ public class DbSQLNotePad {
         return notePadList;
         
     }
+    
+    // Atualizar a anotação
+     public void sqlDbNoteUpdate(User user, NotePad note, NotePad NewNote){
+         
+        Connection connection = connectionMySql();
+        String StringSQL = "update notetpad set NoteName = ?, Contenct = ? where ID = ? and  UserID = ?";
+        PreparedStatement preparedStmt;
+        
+        try{
+            preparedStmt = connection.prepareStatement(StringSQL);
+            preparedStmt.setString(1,NewNote.getName());
+            preparedStmt.setString(2,NewNote.getContent());
+            preparedStmt.setString(3,note.getName());
+            preparedStmt.setString(4,note.getContent());
+            
+        }catch  (SQLException e){
+            e.printStackTrace();
+        }
+        closeConnectionMySql(connection);
+        
+     }
 }

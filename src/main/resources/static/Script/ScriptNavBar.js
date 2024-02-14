@@ -1,5 +1,5 @@
 //Dependencias
-const toDayJs = dayjs();
+//const toDayJs = dayjs();
 
 //Eelementos HTML
 const TitleDay = document.getElementById('Day');
@@ -10,7 +10,7 @@ const BTNYuorNote = document.getElementById("YourNotes");
 
 
 //Scipt
-TitleDay.innerText = toDayJs.format("DD/MM/YYYY")
+//TitleDay.innerText = toDayJs.format("DD/MM/YYYY")
 
 BTNlogout.addEventListener('click', function (event){
     event.preventDefault();

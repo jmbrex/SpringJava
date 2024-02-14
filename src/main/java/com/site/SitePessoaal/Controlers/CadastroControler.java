@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 public class CadastroControler {
     
-    @RequestMapping("/Cadastro")
+    @RequestMapping("/Cadastro") 
     public String Cadastro(Model modelo){
         return "Cadastro";
     }
